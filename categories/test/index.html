@@ -18,6 +18,87 @@
 
   
 
+<style>
+     
+    html,
+    body {
+        background: transparent !important;
+    }
+
+     
+    #vanta-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+    }
+</style>
+
+<script defer src="/js/three.min.js"></script>
+<script defer src="/js/vanta.net.min.js"></script>
+<script>
+    (function () {
+        'use strict';
+
+        
+        var THEMES = {
+            dark: { backgroundColor: 0x0f0f16, color: 0x8a7cff, color2: 0x00d4ff },
+            light: { backgroundColor: 0xf6f7fb, color: 0x5b4fff, color2: 0x00a8ff }
+        };
+
+        var vantaInstance = null;
+
+        function getScheme() {
+            var scheme = document.documentElement.dataset.scheme;
+            if (scheme === 'dark' || scheme === 'light') return scheme;
+            
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+            return 'light';
+        }
+
+        function applyTheme() {
+            if (!(window.VANTA && window.VANTA.NET)) return;
+            var theme = THEMES[getScheme()];
+            if (vantaInstance) vantaInstance.destroy();
+            vantaInstance = window.VANTA.NET({
+                el: '#vanta-bg',
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200,
+                minWidth: 200,
+                scale: 1,
+                scaleMobile: 1,
+                backgroundColor: theme.backgroundColor,
+                color: theme.color,
+                color2: theme.color2,
+                points: 14,
+                maxDistance: 22,
+                spacing: 18
+            });
+        }
+
+        function init() {
+            if (!document.getElementById('vanta-bg')) {
+                var div = document.createElement('div');
+                div.id = 'vanta-bg';
+                document.body.appendChild(div);
+            }
+            applyTheme();
+            
+            document.addEventListener('onColorSchemeChange', applyTheme);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+</script>
 
     </head>
     <body class="">
