@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sorastyx.github.io/p/old/</loc>
-    <lastmod>2026-04-12T22:38:25+08:00</lastmod>
+    <loc>https://sorastyx.github.io/categories/</loc>
+    <lastmod>2026-08-10T01:34:29+08:00</lastmod>
   </url><url>
     <loc>https://sorastyx.github.io/post/</loc>
+    <lastmod>2026-08-10T01:34:29+08:00</lastmod>
+  </url><url>
+    <loc>https://sorastyx.github.io/p/birthday-260810/</loc>
+    <lastmod>2026-08-10T01:34:29+08:00</lastmod>
+  </url><url>
+    <loc>https://sorastyx.github.io/p/old/</loc>
     <lastmod>2026-04-12T22:38:25+08:00</lastmod>
   </url><url>
     <loc>https://sorastyx.github.io/p/newnew/</loc>
@@ -20,9 +26,6 @@
     <loc>https://sorastyx.github.io/</loc>
     <lastmod>2026-04-12T21:24:19+08:00</lastmod>
   </url><url>
-    <loc>https://sorastyx.github.io/categories/</loc>
-    <lastmod>2026-04-12T21:24:19+08:00</lastmod>
-  </url><url>
     <loc>https://sorastyx.github.io/tags/</loc>
   </url><url>
     <loc>https://sorastyx.github.io/categories/test/</loc>
@@ -30,6 +33,9 @@
   </url><url>
     <loc>https://sorastyx.github.io/%E5%85%B3%E4%BA%8E/</loc>
     <lastmod>2026-04-12T21:24:19+08:00</lastmod>
+  </url><url>
+    <loc>https://sorastyx.github.io/categories/%E7%BA%AA%E5%BF%B5/</loc>
+    <lastmod>2026-08-10T01:34:29+08:00</lastmod>
   </url><url>
     <loc>https://sorastyx.github.io/search/</loc>
     <lastmod>2026-04-14T00:49:34+08:00</lastmod>

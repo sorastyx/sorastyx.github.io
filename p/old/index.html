@@ -318,11 +318,14 @@
 
 </header>
 
-    <section class="article-content">
     
-    
+
+
+
+<section class="article-content">
     
 </section>
+
 
 
     <footer class="article-footer">
@@ -842,6 +845,150 @@
         height: 1em;
     }
 </style>
+
+<style>
+    .password-gate {
+        margin: 1.5rem 0 2rem;
+        padding: 1.25rem;
+        border: 1px solid var(--card-separator-color, #d8d8df);
+        border-radius: 8px;
+        background: var(--card-background, rgba(255, 255, 255, 0.92));
+        box-shadow: var(--shadow-l1, 0 4px 20px rgba(0, 0, 0, 0.08));
+    }
+
+    .password-gate-title {
+        margin: 0 0 0.35rem;
+        font-size: 1.1em;
+        font-weight: 700;
+    }
+
+    .password-gate-hint,
+    .password-gate-error {
+        margin: 0.35rem 0 0.8rem;
+    }
+
+    .password-gate-label {
+        display: block;
+        margin-bottom: 0.35rem;
+    }
+
+    .password-gate-controls {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+
+    .password-gate-input {
+        min-width: 12rem;
+        flex: 1 1 12rem;
+        padding: 0.55rem 0.7rem;
+        border: 1px solid var(--card-separator-color, #d8d8df);
+        border-radius: 6px;
+        background: var(--body-background, #fff);
+        color: var(--card-text-color-main, #333);
+        font: inherit;
+    }
+
+    .password-gate-button {
+        padding: 0.55rem 1rem;
+        border: 0;
+        border-radius: 6px;
+        background: var(--accent-color, #3b82f6);
+        color: var(--accent-color-text, #fff);
+        cursor: pointer;
+        font: inherit;
+    }
+
+    .password-gate-error {
+        color: #c0392b;
+    }
+
+    .article-content--protected[hidden] {
+        display: none !important;
+    }
+</style>
+
+<script>
+    (() => {
+        const gates = document.querySelectorAll(".password-gate");
+        if (!gates.length || !window.crypto?.subtle) {
+            return;
+        }
+
+        const fromBase64 = (value) => Uint8Array.from(atob(value), (character) => character.charCodeAt(0));
+
+        const decryptContent = async (password, payload) => {
+            const passwordKey = await crypto.subtle.importKey(
+                "raw",
+                new TextEncoder().encode(password),
+                "PBKDF2",
+                false,
+                ["deriveKey"]
+            );
+            const key = await crypto.subtle.deriveKey(
+                {
+                    name: "PBKDF2",
+                    salt: fromBase64(payload.salt),
+                    iterations: payload.iterations,
+                    hash: "SHA-256"
+                },
+                passwordKey,
+                { name: "AES-GCM", length: 256 },
+                false,
+                ["decrypt"]
+            );
+            const plainText = await crypto.subtle.decrypt(
+                {
+                    name: "AES-GCM",
+                    iv: fromBase64(payload.iv),
+                    tagLength: 128
+                },
+                key,
+                fromBase64(payload.data)
+            );
+            return new TextDecoder().decode(plainText);
+        };
+
+        gates.forEach((gate) => {
+            const form = gate.querySelector(".password-gate-form");
+            const input = gate.querySelector(".password-gate-input");
+            const error = gate.querySelector(".password-gate-error");
+            const protectedContent = gate.parentElement.querySelector(".article-content--protected");
+            let payloadPromise;
+
+            const getPayload = () => {
+                if (!payloadPromise) {
+                    payloadPromise = fetch(gate.parentElement.dataset.contentUrl, { cache: "no-store" })
+                        .then((response) => {
+                            if (!response.ok) {
+                                throw new Error("Protected content request failed");
+                            }
+                            return response.json();
+                        });
+                }
+                return payloadPromise;
+            };
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                error.hidden = true;
+
+                try {
+                    const html = await decryptContent(input.value, await getPayload());
+                    protectedContent.innerHTML = html;
+                    protectedContent.hidden = false;
+                    gate.remove();
+                } catch (exception) {
+                    error.textContent = exception.name === "OperationError"
+                        ? "密码不正确，请重试。"
+                        : "文章资源加载失败，请稍后重试。";
+                    error.hidden = false;
+                    input.select();
+                }
+            });
+        });
+    })();
+</script>
 
     </body>
 </html>
