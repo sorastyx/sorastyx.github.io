@@ -11,7 +11,7 @@
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://sorastyx.github.io/'>
 <meta property='og:site_name' content='花鳥風月official'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-08-10T01:34:29&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-08-10T01:54:11&#43;08:00 '/>
 <meta name="twitter:title" content="花鳥風月official">
 <meta name="twitter:description" content="演示说明"><link rel="alternate" type="application/rss&#43;xml" href="https://sorastyx.github.io/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -388,7 +388,7 @@
 
 
                 <time class="article-time--updated">
-                    最后更新于 Aug 10, 2026 01:34 &#43;0800
+                    最后更新于 Aug 10, 2026 01:54 &#43;0800
                 </time>
             </div>
         
@@ -1063,9 +1063,13 @@
 
                 try {
                     const html = await decryptContent(input.value, await getPayload());
-                    protectedContent.innerHTML = html;
-                    protectedContent.hidden = false;
-                    gate.remove();
+                   protectedContent.innerHTML = html;
+                   protectedContent.hidden = false;
+                    if (gate.parentElement.dataset.birthdayEffects === "true") {
+                        window.startBirthdayCelebration?.();
+                        window.startBirthdayLive2DBlessings?.();
+                    }
+                   gate.remove();
                 } catch (exception) {
                     error.textContent = exception.name === "OperationError"
                         ? "密码不正确，请重试。"
@@ -1077,6 +1081,8 @@
         });
     })();
 </script>
+
+
 
     </body>
 </html>

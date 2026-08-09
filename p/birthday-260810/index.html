@@ -10,7 +10,7 @@
 <meta property='og:description' content="Protected article">
 <meta property='og:url' content='https://sorastyx.github.io/p/birthday-260810/'>
 <meta property='og:site_name' content='花鳥風月official'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-08-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-08-10T01:34:29&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-08-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-08-10T01:54:11&#43;08:00'/>
 <meta name="twitter:title" content="良辰诞日1">
 <meta name="twitter:description" content="Protected article">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -299,7 +299,7 @@
 
 
                 <time class="article-time--updated">
-                    最后更新于 Aug 10, 2026 01:34 &#43;0800
+                    最后更新于 Aug 10, 2026 01:54 &#43;0800
                 </time>
             </div>
         
@@ -330,7 +330,7 @@
 
 
 
-<section class="article-content article-content--locked" data-content-url="/protected/birthday-260810.json" aria-live="polite">
+<section class="article-content article-content--locked" data-content-url="/protected/birthday-260810.json" data-birthday-effects="true" aria-live="polite">
     <div class="password-gate">
         <p class="password-gate-title">这篇文章已加密</p>
         <p class="password-gate-hint">请输入密码后查看完整内容。</p>
@@ -344,6 +344,27 @@
         </form>
     </div>
     <div class="article-content--protected" hidden></div>
+    
+    <div id="birthday-celebration" class="birthday-celebration" hidden aria-hidden="true">
+        <canvas class="birthday-particles" aria-hidden="true"></canvas>
+        <div class="birthday-celebration-content">
+            <p class="birthday-title">生日快乐</p>
+            <p class="birthday-subtitle">愿你的新一岁，被温柔与欢喜环绕。</p>
+            <div class="birthday-cake" aria-hidden="true">
+                <div class="birthday-candles">
+                    <span class="birthday-candle"><i></i></span>
+                    <span class="birthday-candle"><i></i></span>
+                    <span class="birthday-candle"><i></i></span>
+                    <span class="birthday-candle"><i></i></span>
+                    <span class="birthday-candle"><i></i></span>
+                </div>
+                <div class="birthday-cake-top"></div>
+                <div class="birthday-cake-body"><span></span><span></span><span></span></div>
+                <div class="birthday-cake-plate"></div>
+            </div>
+        </div>
+    </div>
+    
 </section>
 
 
@@ -361,7 +382,7 @@
 
 
         <span>
-            最后更新于 Aug 10, 2026 01:34 &#43;0800
+            最后更新于 Aug 10, 2026 01:54 &#43;0800
         </span>
     </section></footer>
 
@@ -995,9 +1016,13 @@
 
                 try {
                     const html = await decryptContent(input.value, await getPayload());
-                    protectedContent.innerHTML = html;
-                    protectedContent.hidden = false;
-                    gate.remove();
+                   protectedContent.innerHTML = html;
+                   protectedContent.hidden = false;
+                    if (gate.parentElement.dataset.birthdayEffects === "true") {
+                        window.startBirthdayCelebration?.();
+                        window.startBirthdayLive2DBlessings?.();
+                    }
+                   gate.remove();
                 } catch (exception) {
                     error.textContent = exception.name === "OperationError"
                         ? "密码不正确，请重试。"
@@ -1009,6 +1034,445 @@
         });
     })();
 </script>
+
+
+
+<style>
+    .birthday-celebration {
+        position: fixed;
+        inset: 0;
+        z-index: 1001;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        pointer-events: none;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 1.2s ease, visibility 1.2s ease;
+    }
+
+    .birthday-celebration[hidden] {
+        display: none;
+    }
+
+    .birthday-celebration.is-fading {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .birthday-particles {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .birthday-celebration-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: min(90vw, 36rem);
+        text-align: center;
+        transform: translateY(-2vh);
+        animation: birthday-content-in 0.8s ease-out both;
+    }
+
+    .birthday-title {
+        margin: 0;
+        color: #fff4c2;
+        font-size: 4rem;
+        line-height: 1.1;
+        font-weight: 800;
+        text-shadow: 0 3px 0 #b54872, 0 0 24px rgba(255, 223, 126, 0.9);
+    }
+
+    .birthday-subtitle {
+        margin: 0.6rem 0 0;
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        text-shadow: 0 2px 8px rgba(55, 32, 65, 0.85);
+    }
+
+    .birthday-cake {
+        position: relative;
+        width: 190px;
+        height: 175px;
+        margin-top: 1.1rem;
+        animation: birthday-cake-bob 1.8s ease-in-out infinite;
+    }
+
+    .birthday-cake-plate {
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        width: 184px;
+        height: 22px;
+        transform: translateX(-50%);
+        border: 3px solid rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        background: rgba(118, 183, 207, 0.85);
+        box-shadow: 0 8px 18px rgba(35, 25, 60, 0.3);
+    }
+
+    .birthday-cake-body {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        width: 150px;
+        height: 72px;
+        transform: translateX(-50%);
+        border: 3px solid #b94b70;
+        border-radius: 14px 14px 22px 22px;
+        background: linear-gradient(180deg, #f6a5ad 0 26%, #f7c9a3 26% 100%);
+        box-shadow: 0 8px 12px rgba(85, 35, 65, 0.3);
+    }
+
+    .birthday-cake-body::after {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        height: 4px;
+        border-radius: 50%;
+        background: rgba(185, 75, 112, 0.4);
+        content: "";
+    }
+
+    .birthday-cake-body span {
+        position: absolute;
+        top: -2px;
+        width: 19px;
+        height: 25px;
+        border-radius: 0 0 12px 12px;
+        background: #fff0ca;
+    }
+
+    .birthday-cake-body span:nth-child(1) {
+        left: 23px;
+    }
+
+    .birthday-cake-body span:nth-child(2) {
+        left: 65px;
+        height: 32px;
+    }
+
+    .birthday-cake-body span:nth-child(3) {
+        right: 22px;
+        height: 21px;
+    }
+
+    .birthday-cake-top {
+        position: absolute;
+        bottom: 83px;
+        left: 50%;
+        width: 158px;
+        height: 38px;
+        transform: translateX(-50%);
+        border: 3px solid #b94b70;
+        border-radius: 50%;
+        background: #fff0ca;
+        box-shadow: 0 4px 0 rgba(185, 75, 112, 0.35);
+    }
+
+    .birthday-candles {
+        position: absolute;
+        bottom: 112px;
+        left: 50%;
+        z-index: 2;
+        display: flex;
+        gap: 18px;
+        transform: translateX(-50%);
+    }
+
+    .birthday-candle {
+        position: relative;
+        display: block;
+        width: 12px;
+        height: 46px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 4px 4px 2px 2px;
+        background: repeating-linear-gradient(135deg, #82c9d8 0 5px, #fff0ca 5px 9px);
+    }
+
+    .birthday-candle:nth-child(even) {
+        background: repeating-linear-gradient(135deg, #f08a9e 0 5px, #fff0ca 5px 9px);
+    }
+
+    .birthday-candle i {
+        position: absolute;
+        top: -23px;
+        left: 50%;
+        width: 15px;
+        height: 23px;
+        transform: translateX(-50%) rotate(45deg);
+        border-radius: 50% 50% 50% 0;
+        background: #ffd166;
+        box-shadow: 0 0 14px 5px rgba(255, 209, 102, 0.75);
+        animation: birthday-flame 0.75s ease-in-out infinite alternate;
+    }
+
+    .birthday-candle:nth-child(2) i,
+    .birthday-candle:nth-child(4) i {
+        animation-delay: -0.3s;
+    }
+
+    @keyframes birthday-content-in {
+        from {
+            opacity: 0;
+            transform: translateY(2rem) scale(0.92);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(-2vh) scale(1);
+        }
+    }
+
+    @keyframes birthday-cake-bob {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    @keyframes birthday-flame {
+        from {
+            opacity: 0.75;
+            transform: translateX(-50%) rotate(40deg) scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) rotate(50deg) scale(1.08);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .birthday-title {
+            font-size: 2.7rem;
+        }
+
+        .birthday-subtitle {
+            max-width: 20rem;
+            font-size: 1rem;
+        }
+
+        .birthday-cake {
+            transform: scale(0.84);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .birthday-celebration-content,
+        .birthday-cake,
+        .birthday-candle i {
+            animation: none;
+        }
+    }
+</style>
+
+<script>
+    (() => {
+        const birthdayMessages = [
+            "生日快乐呀，愿你眼里有星光，心中有清欢，所遇皆温柔。",
+            "愿新的一岁，烦恼轻一些，欢喜多一些，想去的地方都能抵达。",
+            "愿你被爱意簇拥，也被自己的光照亮，永远漂亮又自由。",
+            "今天的愿望一定会被星星听见，愿你岁岁欢愉，年年如意。"
+        ];
+
+        window.startBirthdayLive2DBlessings = () => {
+            if (window.__birthdayLive2DStarted) {
+                return;
+            }
+            window.__birthdayLive2DStarted = true;
+
+            let messageIndex = 0;
+            let attempts = 0;
+
+            const showNextMessage = () => {
+                const tips = document.getElementById("waifu-tips");
+                if (!tips) {
+                    if (attempts++ < 30) {
+                        window.setTimeout(showNextMessage, 500);
+                    }
+                    return;
+                }
+
+                const message = birthdayMessages[messageIndex++];
+                tips.textContent = message;
+                tips.classList.add("waifu-tips-active");
+
+                const keepVisible = window.setInterval(() => {
+                    tips.classList.add("waifu-tips-active");
+                }, 300);
+
+                window.setTimeout(() => {
+                    window.clearInterval(keepVisible);
+                    tips.classList.remove("waifu-tips-active");
+                }, 4800);
+
+                if (messageIndex < birthdayMessages.length) {
+                    window.setTimeout(showNextMessage, 5200);
+                }
+            };
+
+            showNextMessage();
+        };
+
+        window.startBirthdayCelebration = () => {
+            const celebration = document.getElementById("birthday-celebration");
+            const canvas = celebration?.querySelector(".birthday-particles");
+            const context = canvas?.getContext("2d");
+            if (!celebration || !canvas || !context || celebration.dataset.started === "true") {
+                return;
+            }
+
+            celebration.dataset.started = "true";
+            celebration.hidden = false;
+            celebration.classList.remove("is-fading");
+
+            const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+            const colors = ["#ffd166", "#f08a9e", "#82c9d8", "#fff0ca", "#b78de0"];
+            const types = ["confetti", "star", "heart", "sparkle"];
+            const particles = [];
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            let pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+            const resizeCanvas = () => {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = Math.floor(width * pixelRatio);
+                canvas.height = Math.floor(height * pixelRatio);
+                canvas.style.width = width + "px";
+                canvas.style.height = height + "px";
+                context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+            };
+
+            const random = (min, max) => Math.random() * (max - min) + min;
+            const particleCount = reducedMotion ? 34 : 110;
+
+            for (let index = 0; index < particleCount; index += 1) {
+                particles.push({
+                    x: random(0, width),
+                    y: random(-height * 0.2, height),
+                    vx: random(-0.8, 0.8),
+                    vy: random(1.2, 3.4),
+                    size: random(5, 12),
+                    rotation: random(0, Math.PI * 2),
+                    rotationSpeed: random(-0.08, 0.08),
+                    color: colors[index % colors.length],
+                    type: types[index % types.length]
+                });
+            }
+
+            const drawStar = (particle) => {
+                context.beginPath();
+                for (let point = 0; point < 10; point += 1) {
+                    const radius = point % 2 === 0 ? particle.size : particle.size * 0.42;
+                    const angle = particle.rotation + point * Math.PI / 5;
+                    const x = particle.x + Math.cos(angle) * radius;
+                    const y = particle.y + Math.sin(angle) * radius;
+                    if (point === 0) {
+                        context.moveTo(x, y);
+                    } else {
+                        context.lineTo(x, y);
+                    }
+                }
+                context.closePath();
+                context.fill();
+            };
+
+            const drawHeart = (particle) => {
+                const size = particle.size;
+                context.save();
+                context.translate(particle.x, particle.y);
+                context.rotate(particle.rotation);
+                context.beginPath();
+                context.moveTo(0, size * 0.9);
+                context.bezierCurveTo(-size * 1.2, size * 0.15, -size * 0.9, -size * 0.75, 0, -size * 0.1);
+                context.bezierCurveTo(size * 0.9, -size * 0.75, size * 1.2, size * 0.15, 0, size * 0.9);
+                context.fill();
+                context.restore();
+            };
+
+            const drawParticle = (particle) => {
+                context.fillStyle = particle.color;
+                context.save();
+                context.translate(particle.x, particle.y);
+                context.rotate(particle.rotation);
+
+                if (particle.type === "confetti") {
+                    context.fillRect(-particle.size * 0.55, -particle.size * 0.3, particle.size * 1.1, particle.size * 0.6);
+                } else if (particle.type === "star") {
+                    context.restore();
+                    drawStar(particle);
+                    return;
+                } else if (particle.type === "heart") {
+                    context.restore();
+                    drawHeart(particle);
+                    return;
+                } else {
+                    context.beginPath();
+                    context.arc(0, 0, particle.size * 0.45, 0, Math.PI * 2);
+                    context.fill();
+                }
+
+                context.restore();
+            };
+
+            const startTime = performance.now();
+            const duration = reducedMotion ? 3600 : 7200;
+            let animationFrame;
+
+            const render = (now) => {
+                const elapsed = now - startTime;
+                const fadeProgress = Math.max(0, (elapsed - duration + 1200) / 1200);
+                context.clearRect(0, 0, width, height);
+                context.globalAlpha = 1 - Math.min(fadeProgress, 1);
+
+                particles.forEach((particle) => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    particle.vy += 0.018;
+                    particle.rotation += particle.rotationSpeed;
+
+                    if (particle.y > height + 24) {
+                        particle.y = random(-80, -20);
+                        particle.x = random(0, width);
+                        particle.vy = random(1.2, 3.4);
+                    }
+
+                    drawParticle(particle);
+                });
+
+                context.globalAlpha = 1;
+                if (elapsed < duration) {
+                    animationFrame = window.requestAnimationFrame(render);
+                } else {
+                    window.cancelAnimationFrame(animationFrame);
+                    celebration.classList.add("is-fading");
+                    window.setTimeout(() => {
+                        celebration.hidden = true;
+                        celebration.classList.remove("is-fading");
+                        delete celebration.dataset.started;
+                        window.removeEventListener("resize", resizeCanvas);
+                        context.clearRect(0, 0, width, height);
+                    }, 1300);
+                }
+            };
+
+            resizeCanvas();
+            window.addEventListener("resize", resizeCanvas);
+           window.requestAnimationFrame(render);
+       };
+   })();
+</script>
+
 
     </body>
 </html>

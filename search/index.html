@@ -765,9 +765,13 @@
 
                 try {
                     const html = await decryptContent(input.value, await getPayload());
-                    protectedContent.innerHTML = html;
-                    protectedContent.hidden = false;
-                    gate.remove();
+                   protectedContent.innerHTML = html;
+                   protectedContent.hidden = false;
+                    if (gate.parentElement.dataset.birthdayEffects === "true") {
+                        window.startBirthdayCelebration?.();
+                        window.startBirthdayLive2DBlessings?.();
+                    }
+                   gate.remove();
                 } catch (exception) {
                     error.textContent = exception.name === "OperationError"
                         ? "密码不正确，请重试。"
@@ -779,6 +783,8 @@
         });
     })();
 </script>
+
+
 
     </body>
 </html>
