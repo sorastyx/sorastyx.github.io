@@ -354,14 +354,31 @@
     </section>
 <footer class="site-footer">
     <section class="copyright">
-        &copy; 
+        &copy;
         
         2026 花鳥風月official
     </section>
-    
+
     <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+        <div class="footer-powerby-content">
+            <div class="footer-credit-text">
+                使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+                主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+            </div>
+
+            <span class="site-visit-count" aria-label="网站访问次数">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4-5.4 6-9 6c-3.6 0-6.6-2-9-6c2.4-4 5.4-6 9-6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span>网站访问</span>
+                <span id="vercount_container_site_pv">
+                    <span id="vercount_value_site_pv">loading... </span>次
+                </span>
+            </span>
+        </div>
     </section>
 </footer>
 
@@ -671,34 +688,34 @@
   initCodeMoreBox();
 </script>
 
-<div class="site-visit-count" aria-label="网站访问次数">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-  <path d="M21 12c-2.4 4-5.4 6-9 6c-3.6 0-6.6-2-9-6c2.4-4 5.4-6 9-6c3.6 0 6.6 2 9 6" />
-</svg>
-
-    <span>网站访问</span>
-    <span id="vercount_container_site_pv">
-        <span id="vercount_value_site_pv">loading... </span>次
-    </span>
-</div>
-
 <style>
-    .site-visit-count {
+    .footer-powerby-content {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.35rem;
-        margin: 0.75rem 0 1.25rem;
-        color: inherit;
-        font-size: 0.9rem;
-        opacity: 0.75;
+        flex-wrap: wrap;
+        column-gap: 1.25rem;
+        row-gap: 0.35rem;
     }
 
-    .site-visit-count .icon {
-        width: 1.1rem;
-        height: 1.1rem;
+    .footer-credit-text {
+        line-height: 1.8;
+    }
+
+    .site-footer .site-visit-count {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: inherit;
+        font: inherit;
+        line-height: inherit;
+        opacity: 0.8;
+        white-space: nowrap;
+    }
+
+    .site-footer .site-visit-count .icon {
+        width: 1em;
+        height: 1em;
     }
 </style>
 
