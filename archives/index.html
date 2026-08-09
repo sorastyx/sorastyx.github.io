@@ -349,6 +349,32 @@
     const widgetPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
 
     
+    const vercountScript = document.createElement("script");
+    vercountScript.defer = true;
+    vercountScript.src = "https://cn.vercount.one/js";
+    document.head.appendChild(vercountScript);
+
+    function showHideViewCount() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) {
+            return;
+        }
+
+        
+        if (!document.querySelector(".article-page")) {
+            viewCounts.forEach((element) => {
+                element.style.display = "none";
+            });
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", showHideViewCount, { once: true });
+    } else {
+        showHideViewCount();
+    }
+
+    
     
     
     const modelPath = "https://cdn.jsdelivr.net/gh/sorastyx/static-resources@v1.0.11/";
@@ -603,7 +629,6 @@
   
   initCodeMoreBox();
 </script>
-
 
 
     </body>
