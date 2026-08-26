@@ -21,7 +21,54 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://sorastyx.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
+        <description>&lt;div id=&#34;about-profile-marker&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;about-intro&#34;&gt;
+  &lt;p class=&#34;about-kicker&#34;&gt;PERSONAL SPACE · ACGN · RESEARCH&lt;/p&gt;
+  &lt;h2&gt;你好，我是花鳥風月。&lt;/h2&gt;
+  &lt;p class=&#34;about-lead&#34;&gt;这里是一个用来记录学习、科研、兴趣与生活片段的小小空间。欢迎随意逛逛，也欢迎和我分享你喜欢的作品与想法。&lt;/p&gt;
+  &lt;div class=&#34;about-tags&#34; aria-label=&#34;本站关键词&#34;&gt;
+    &lt;span&gt;软件工程&lt;/span&gt;
+    &lt;span&gt;推荐系统&lt;/span&gt;
+    &lt;span&gt;音乐&lt;/span&gt;
+    &lt;span&gt;ACGN&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;about-facts&#34; role=&#34;list&#34;&gt;
+  &lt;div class=&#34;about-fact&#34; role=&#34;listitem&#34;&gt;
+    &lt;span class=&#34;about-fact-label&#34;&gt;现在&lt;/span&gt;
+    &lt;strong&gt;吉林大学&lt;/strong&gt;
+    &lt;small&gt;工科试验班（软件工程）&lt;/small&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;about-fact&#34; role=&#34;listitem&#34;&gt;
+    &lt;span class=&#34;about-fact-label&#34;&gt;研究&lt;/span&gt;
+    &lt;strong&gt;推荐系统&lt;/strong&gt;
+    &lt;small&gt;生成式推荐 · 多领域推荐&lt;/small&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;about-fact&#34; role=&#34;listitem&#34;&gt;
+    &lt;span class=&#34;about-fact-label&#34;&gt;记录&lt;/span&gt;
+    &lt;strong&gt;慢慢写，慢慢积累&lt;/strong&gt;
+    &lt;small&gt;学习 · 科研 · 生活 · 杂谈&lt;/small&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;名字与来处&#34;&gt;名字与来处
+&lt;/h2&gt;&lt;p&gt;“花鳥風月”可以来自东方经典音乐《華鳥風月》，也可以来自《千恋万花》的原生 BGM《花鳥風月》，又或者只是日语中描绘自然美景与风雅情趣的词语。对我而言，它更像一个承载兴趣、审美与记录的名字。&lt;/p&gt;
+&lt;h2 id=&#34;现在的我&#34;&gt;现在的我
+&lt;/h2&gt;&lt;p&gt;2024 年入学，目前就读于吉林大学工科试验班（软件工程）。2025 年 8 月进入实验室，现阶段主要关注推荐系统方向，研究内容包括生成式推荐与多领域推荐。&lt;/p&gt;
+&lt;p&gt;我喜欢折腾，也喜欢把折腾过的东西记录下来。虽然偶尔会因为力不从心而把一些帖子鸽掉，但重新整理思路、把零散的经验写成文字，本身就是一件很有意思的事。&lt;/p&gt;
+&lt;h2 id=&#34;我喜欢的事&#34;&gt;我喜欢的事
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;音乐&lt;/strong&gt;：尤其喜欢管乐，接触过长笛、竹笛、巴乌、葫芦丝和陶笛。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;美术&lt;/strong&gt;：曾经学过一点速写，喜欢观察线条、光影和角色设计。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ACGN&lt;/strong&gt;：喜欢追番、游玩 GalGame（Visual Novels），也愿意和同好交流作品、角色与故事。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;关于这个网站&#34;&gt;关于这个网站
+&lt;/h2&gt;&lt;p&gt;本站使用 Hugo 与 Stack 主题搭建，通过 GitHub Pages 托管。这里主要记录本科阶段的学习心得、科研方面的技术经验，也会留下生活记录、娱乐体验和偶尔的感想杂谈。&lt;/p&gt;
+&lt;p&gt;希望这里不只是一个放文章的地方，也能成为一个方便回看、持续生长的小型个人档案。你可以从&lt;a class=&#34;link&#34; href=&#34;https://sorastyx.github.io/&#34; &gt;主页&lt;/a&gt;开始，也可以去&lt;a class=&#34;link&#34; href=&#34;https://sorastyx.github.io/archives/&#34; &gt;归档&lt;/a&gt;看看最近写下的内容。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你也喜欢音乐、绘画、动画、漫画或游戏，欢迎来和我交换一点想法。愿我们都能在各自喜欢的事物里，找到继续前进的理由。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p class=&#34;about-license&#34;&gt;&lt;small&gt;本站原创文章及原创图片，除特别注明外，采用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-SA 4.0&lt;/a&gt; 协议发布。本站使用的主题、Live2D 模型、背景图片、字体及第三方代码，其版权和许可归原作者所有，并按照各自许可证使用。&lt;/small&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
