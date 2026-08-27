@@ -10,7 +10,7 @@
 <meta property='og:description' content="记录个人生活轨迹的空间">
 <meta property='og:url' content='https://sorastyx.github.io/%E5%85%B3%E4%BA%8E/'>
 <meta property='og:site_name' content='花鳥風月official'>
-<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:modified_time' content='2026-08-27T01:49:24&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:modified_time' content='2026-08-27T10:50:42&#43;08:00'/>
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="记录个人生活轨迹的空间">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -367,7 +367,7 @@
 
 
                 <time class="article-time--updated">
-                    最后更新于 Aug 27, 2026 01:49 &#43;0800
+                    最后更新于 Aug 27, 2026 10:50 &#43;0800
                 </time>
             </div>
         
@@ -460,7 +460,7 @@
 
 
         <span>
-            最后更新于 Aug 27, 2026 01:49 &#43;0800
+            最后更新于 Aug 27, 2026 10:50 &#43;0800
         </span>
     </section></footer>
 
@@ -473,6 +473,58 @@
     
 
      
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="sorastyx/hugo-main"
+    data-repo-id="R_kgDOSAlQrw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOSAlQr84DERtm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
