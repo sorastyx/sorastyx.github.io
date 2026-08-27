@@ -480,7 +480,7 @@ $$&lt;/p&gt;
 &lt;/h5&gt;&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt; 设简单图 $G$ 有 $n$ 个顶点，边数为 $m$，且 $m&amp;gt;\binom{n-1}{2}$。证明：$G$ 是连通图。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt; 使用反证法。假设 $G$ 不连通，则可把顶点集分成两个非空部分 $A,B$，其中 $|A|=k$、$|B|=n-k$，且 $1\leq k\leq n-1$，使得 $A,B$ 之间没有任何边。因此 $G$ 的边只能位于 $A$ 内部或 $B$ 内部，故&lt;/p&gt;
 &lt;p&gt;$$
-m\leq\binom{k}{2}+\binom{n-k}{2}。
+m\leq\binom{k}{2}+\binom{n-k}{2}
 $$&lt;/p&gt;
 &lt;p&gt;固定 $n$，函数&lt;/p&gt;
 &lt;p&gt;$$
@@ -488,11 +488,11 @@ f(k)=\binom{k}{2}+\binom{n-k}{2}
 $$&lt;/p&gt;
 &lt;p&gt;在 $1\leq k\leq n-1$ 上的最大值于端点 $k=1$（或 $k=n-1$）处取得，此时&lt;/p&gt;
 &lt;p&gt;$$
-f(1)=\binom{1}{2}+\binom{n-1}{2}=\binom{n-1}{2}。
+f(1)=\binom{1}{2}+\binom{n-1}{2}=\binom{n-1}{2}
 $$&lt;/p&gt;
 &lt;p&gt;所以&lt;/p&gt;
 &lt;p&gt;$$
-m\leq\binom{n-1}{2},
+m\leq\binom{n-1}{2}
 $$&lt;/p&gt;
 &lt;p&gt;与题设 $m&amp;gt;\binom{n-1}{2}$ 矛盾。故 $G$ 连通。&lt;/p&gt;
 &lt;h5 id=&#34;例题6&#34;&gt;例题（6）
