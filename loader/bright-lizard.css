@@ -1,0 +1,153 @@
+/*
+ * Adapted from "Loader by dexter-st":
+ * https://uiverse.io/dexter-st/bright-lizard-8
+ *
+ * Copyright (c) 2026 dexter-st
+ * Released under the MIT License.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.site-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #08060f;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.85s ease, visibility 0s linear 0.85s;
+}
+
+.site-loader--leaving {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.site-loader .loader-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 0;
+    user-select: none;
+}
+
+.site-loader .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: bright-lizard-rotate 2s linear infinite;
+    z-index: 0;
+}
+
+.site-loader .loader-letter {
+    display: inline-block;
+    z-index: 1;
+    border: none;
+    border-radius: 50ch;
+    opacity: 0.4;
+    transform: translateY(0);
+    animation: bright-lizard-letter 2s infinite;
+}
+
+.site-loader .loader-letter:nth-child(1) { animation-delay: 0s; }
+.site-loader .loader-letter:nth-child(2) { animation-delay: 0.1s; }
+.site-loader .loader-letter:nth-child(3) { animation-delay: 0.2s; }
+.site-loader .loader-letter:nth-child(4) { animation-delay: 0.3s; }
+.site-loader .loader-letter:nth-child(5) { animation-delay: 0.4s; }
+.site-loader .loader-letter:nth-child(6) { animation-delay: 0.5s; }
+.site-loader .loader-letter:nth-child(7) { animation-delay: 0.6s; }
+.site-loader .loader-letter:nth-child(8) { animation-delay: 0.7s; }
+.site-loader .loader-letter:nth-child(9) { animation-delay: 0.8s; }
+.site-loader .loader-letter:nth-child(10) { animation-delay: 0.9s; }
+
+@keyframes bright-lizard-rotate {
+    0% {
+        transform: rotate(90deg);
+        box-shadow:
+            0 10px 20px 0 #fff inset,
+            0 20px 30px 0 #ad5fff inset,
+            0 60px 60px 0 #471eec inset;
+    }
+
+    50% {
+        transform: rotate(270deg);
+        box-shadow:
+            0 10px 20px 0 #fff inset,
+            0 20px 10px 0 #d60a47 inset,
+            0 40px 60px 0 #311e80 inset;
+    }
+
+    100% {
+        transform: rotate(450deg);
+        box-shadow:
+            0 10px 20px 0 #fff inset,
+            0 20px 30px 0 #ad5fff inset,
+            0 60px 60px 0 #471eec inset;
+    }
+}
+
+@keyframes bright-lizard-letter {
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: translateY(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    40% {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .site-loader .loader-wrapper {
+        width: 150px;
+        height: 150px;
+        font-size: 1em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-loader .loader,
+    .site-loader .loader-letter {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+    }
+}

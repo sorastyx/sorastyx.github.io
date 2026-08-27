@@ -18,6 +18,57 @@
 
   
 
+<link rel="stylesheet" href="/loader/bright-lizard.css">
+
+<noscript>
+    <style>
+        #site-loader {
+            display: none;
+        }
+    </style>
+</noscript>
+
+<div id="site-loader" class="site-loader" aria-hidden="true">
+    <div class="loader-wrapper">
+        <span class="loader-letter">G</span>
+        <span class="loader-letter">e</span>
+        <span class="loader-letter">n</span>
+        <span class="loader-letter">e</span>
+        <span class="loader-letter">r</span>
+        <span class="loader-letter">a</span>
+        <span class="loader-letter">t</span>
+        <span class="loader-letter">i</span>
+        <span class="loader-letter">n</span>
+        <span class="loader-letter">g</span>
+
+        <div class="loader"></div>
+    </div>
+</div>
+
+<script>
+    (() => {
+        const loader = document.getElementById("site-loader");
+        if (!loader) {
+            return;
+        }
+
+        const hideLoader = () => {
+            loader.classList.add("site-loader--leaving");
+            window.setTimeout(() => loader.remove(), 900);
+        };
+
+        const finishLoading = () => {
+            
+            window.setTimeout(hideLoader, 180);
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", finishLoading, { once: true });
+        } else {
+            finishLoading();
+        }
+    })();
+</script>
 
     </head>
     <body class="">
