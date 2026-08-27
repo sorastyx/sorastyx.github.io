@@ -477,8 +477,24 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt; 要证明 $C$ 是 Hamilton 回路，只需证明图 $G$ 的所有顶点都在 $C$ 上。&lt;/p&gt;
 &lt;p&gt;假设结论不成立，则存在一个顶点 $w\notin V(C)$。由于 $G$ 是连通图，所以能够找到 $C$ 上的一个顶点 $u$，以及一条连接 $w$ 与 $u$ 的路 $\Gamma=w\cdots u$，使得 $\Gamma$ 上的边都不在 $C$ 上，并且 $\Gamma$ 的长度至少为 $1$。设 $v$ 是 $C$ 上与 $u$ 相邻的一个顶点，即 $e=uv$ 是 $C$ 上的一条边。从圈 $C$ 中删去边 $e$，得到路径 $\Gamma_1=C-e=uv_1v_2\cdots v_rv$。再把路 $\Gamma=w\cdots u$ 接到 $\Gamma_1$ 的端点 $u$ 上，得到路径 $\Gamma_2=\Gamma_1\cup\Gamma=w\cdots uv_1v_2\cdots v_rv$。因为 $\Gamma$ 的长度至少为 $1$，所以 $\Gamma_2$ 比 $\Gamma_1$ 更长。但是，根据题设，从 $C$ 上删除任意一条边后得到的路径都是 $G$ 中的最长路径，因此 $\Gamma_1$ 应当是 $G$ 中的最长路径。这与 $\Gamma_2$ 比 $\Gamma_1$ 更长相矛盾。因此，不存在 $C$ 外的顶点，即 $G$ 中所有顶点都在 $C$ 上。所以 $C$ 是 $G$ 中的哈密顿回路。证毕。&lt;/p&gt;
 &lt;h5 id=&#34;例题5&#34;&gt;例题（5）
-&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt; 设简单图 $G$ 有 $n$ 个顶点，边数为 $m$，且 $m&amp;gt;\mathrm{C}_{n-1}^{2}$。证明：$G$ 是连通图。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt; 使用反证法。假设 $G$ 不连通，则可把顶点集分成两个非空部分 $A,B$，其中 $|A|=k$、$|B|=n-k$，且 $1\leq k\leq n-1$，使得 $A,B$ 之间没有任何边。因此 $G$ 的边只能位于 $A$ 内部或 $B$ 内部，故 $m\leq\mathrm{C}&lt;em&gt;{k}^{2}+\mathrm{C}&lt;/em&gt;{n-k}^{2}$。固定 $n$，函数 $f(k)=\mathrm{C}&lt;em&gt;{k}^{2}+\mathrm{C}&lt;/em&gt;{n-k}^{2}$ 在 $1\leq k\leq n-1$ 上的最大值于端点 $k=1$（或 $k=n-1$）处取得，此时 $f(1)=\mathrm{C}&lt;em&gt;{1}^{2}+\mathrm{C}&lt;/em&gt;{n-1}^{2}=\mathrm{C}&lt;em&gt;{n-1}^{2}$。所以 $m\leq\mathrm{C}&lt;/em&gt;{n-1}^{2}$，与题设 $m&amp;gt;\mathrm{C}_{n-1}^{2}$ 矛盾。故 $G$ 连通。&lt;/p&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt; 设简单图 $G$ 有 $n$ 个顶点，边数为 $m$，且 $m&amp;gt;\binom{n-1}{2}$。证明：$G$ 是连通图。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt; 使用反证法。假设 $G$ 不连通，则可把顶点集分成两个非空部分 $A,B$，其中 $|A|=k$、$|B|=n-k$，且 $1\leq k\leq n-1$，使得 $A,B$ 之间没有任何边。因此 $G$ 的边只能位于 $A$ 内部或 $B$ 内部，故&lt;/p&gt;
+&lt;p&gt;$$
+m\leq\binom{k}{2}+\binom{n-k}{2}。
+$$&lt;/p&gt;
+&lt;p&gt;固定 $n$，函数&lt;/p&gt;
+&lt;p&gt;$$
+f(k)=\binom{k}{2}+\binom{n-k}{2}
+$$&lt;/p&gt;
+&lt;p&gt;在 $1\leq k\leq n-1$ 上的最大值于端点 $k=1$（或 $k=n-1$）处取得，此时&lt;/p&gt;
+&lt;p&gt;$$
+f(1)=\binom{1}{2}+\binom{n-1}{2}=\binom{n-1}{2}。
+$$&lt;/p&gt;
+&lt;p&gt;所以&lt;/p&gt;
+&lt;p&gt;$$
+m\leq\binom{n-1}{2},
+$$&lt;/p&gt;
+&lt;p&gt;与题设 $m&amp;gt;\binom{n-1}{2}$ 矛盾。故 $G$ 连通。&lt;/p&gt;
 &lt;h5 id=&#34;例题6&#34;&gt;例题（6）
 &lt;/h5&gt;&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt; 证明：任何简单图都能把其所有顶点分成两组，使两端分别位于不同组中的边数不少于 $m/2$。&lt;/p&gt;
 &lt;p&gt;设图 $G$ 有 $m$ 条边。在所有把图中顶点分到两个组 $A,B$ 的分法中，选取一种分法，使得“一端在 $A$ 中、另一端在 $B$ 中”的边数最多。记在这种分法下，两端分别位于不同组中的边数为 $q$。任取一个顶点 $v$。记 $v$ 在自己所在组中的邻点数为 $s(v)$，在另一个组中的邻点数为 $t(v)$，则顶点 $v$ 的度满足 $d(v)=s(v)+t(v)$。&lt;/p&gt;
