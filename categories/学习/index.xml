@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>花鳥風月official</title>
-        <link>https://sorastyx.github.io/</link>
-        <description>Recent content on 花鳥風月official</description>
+        <title>学习 on 花鳥風月official</title>
+        <link>https://sorastyx.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
+        <description>Recent content in 学习 on 花鳥風月official</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>花鳥風月official</copyright><atom:link href="https://sorastyx.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>花鳥風月official</copyright><atom:link href="https://sorastyx.github.io/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>离散数学Ⅰ 笔记</title>
         <link>https://sorastyx.github.io/p/discrete-mathematics-1-notes/</link>
         <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
@@ -747,118 +747,6 @@ $$
 &lt;h4 id=&#34;奇数与偶数&#34;&gt;奇数与偶数
 &lt;/h4&gt;&lt;p&gt;看到题中说某个数是奇数或不能被 $2$ 整除，应立即想到该数可以等价地表示为 $2k+1$ 或 $2k-1$（两种表达等价，$k$ 为整数）；如果某个数是偶数，则可以等价地表示为 $2k$。很多题都是利用奇偶性的等价表达解决的，但也有例外，例如上面那道真题就不需要写出奇数和偶数的等价表达，关键在于使用其他方法证明。因此，对这种等价表达有印象即可，不要过于死板。&lt;/p&gt;
 &lt;p&gt;例 5.2.6 是一个典型。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>良辰诞日1</title>
-        <link>https://sorastyx.github.io/p/birthday-260810/</link>
-        <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://sorastyx.github.io/p/birthday-260810/</guid>
-        <description>&lt;!-- Protected content is loaded after password verification. --&gt;
-&lt;div class=&#34;protected-article-placeholder&#34; aria-hidden=&#34;true&#34;&gt;Protected article&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>归档</title>
-        <link>https://sorastyx.github.io/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://sorastyx.github.io/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>关于</title>
-        <link>https://sorastyx.github.io/%E5%85%B3%E4%BA%8E/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://sorastyx.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;div id=&#34;about-profile-marker&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;about-intro&#34;&gt;
-  &lt;p class=&#34;about-kicker&#34;&gt;PERSONAL SPACE · ACGN · RESEARCH&lt;/p&gt;
-  &lt;h2&gt;你好，我是花鳥風月。&lt;/h2&gt;
-  &lt;p class=&#34;about-lead&#34;&gt;这里是一个用来记录学习、科研、兴趣与生活片段的小小空间。欢迎随意逛逛，也欢迎和我分享你喜欢的作品与想法。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;about-facts&#34; role=&#34;list&#34;&gt;
-  &lt;div class=&#34;about-fact&#34; role=&#34;listitem&#34;&gt;
-    &lt;span class=&#34;about-fact-label&#34;&gt;现在&lt;/span&gt;
-    &lt;strong&gt;吉林大学&lt;/strong&gt;
-    &lt;small&gt;工科试验班（软件工程）&lt;/small&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;about-fact&#34; role=&#34;listitem&#34;&gt;
-    &lt;span class=&#34;about-fact-label&#34;&gt;研究&lt;/span&gt;
-    &lt;strong&gt;推荐系统&lt;/strong&gt;
-    &lt;small&gt;生成式推荐 · 多领域推荐&lt;/small&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;about-fact&#34; role=&#34;listitem&#34;&gt;
-    &lt;span class=&#34;about-fact-label&#34;&gt;记录&lt;/span&gt;
-    &lt;strong&gt;慢慢写，慢慢积累&lt;/strong&gt;
-    &lt;small&gt;学习 · 科研 · 生活 · 杂谈&lt;/small&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;名字与来处&#34;&gt;名字与来处
-&lt;/h2&gt;&lt;p&gt;“花鳥風月”可以来自东方经典音乐《華鳥風月》，也可以来自《千恋万花》的原生 BGM《花鳥風月》，又或者只是日语中描绘自然美景与风雅情趣的词语。对我而言，它更像一个承载兴趣、审美与记录的名字。&lt;/p&gt;
-&lt;h2 id=&#34;现在的我&#34;&gt;现在的我
-&lt;/h2&gt;&lt;p&gt;2024 年入学，目前就读于吉林大学工科试验班（软件工程）。2025 年 8 月进入实验室，现阶段主要关注推荐系统方向，研究内容包括生成式推荐与多领域推荐。&lt;/p&gt;
-&lt;p&gt;我喜欢折腾，也喜欢把折腾过的东西记录下来。虽然偶尔会因为力不从心而把一些帖子鸽掉，但重新整理思路、把零散的经验写成文字，本身就是一件很有意思的事。&lt;/p&gt;
-&lt;h2 id=&#34;我喜欢的事&#34;&gt;我喜欢的事
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;音乐&lt;/strong&gt;：尤其喜欢管乐，接触过长笛、竹笛、巴乌、葫芦丝和陶笛。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;美术&lt;/strong&gt;：曾经学过一点速写，喜欢观察线条、光影和角色设计。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ACGN&lt;/strong&gt;：喜欢追番、游玩 GalGame（Visual Novels），也愿意和同好交流作品、角色与故事。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;关于这个网站&#34;&gt;关于这个网站
-&lt;/h2&gt;&lt;p&gt;本站使用 Hugo 与 Stack 主题搭建，通过 GitHub Pages 托管。这里主要记录本科阶段的学习心得、科研方面的技术经验，也会留下生活记录、娱乐体验和偶尔的感想杂谈。&lt;/p&gt;
-&lt;p&gt;希望这里不只是一个放文章的地方，也能成为一个方便回看、持续生长的小型个人档案。你可以从&lt;a class=&#34;link&#34; href=&#34;https://sorastyx.github.io/&#34; &gt;主页&lt;/a&gt;开始，也可以去&lt;a class=&#34;link&#34; href=&#34;https://sorastyx.github.io/archives/&#34; &gt;归档&lt;/a&gt;看看最近写下的内容。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果你也喜欢 ACGN 或者 AI 相关的技术，欢迎来和我交换一点想法。愿我们都能在各自喜欢的事物里，找到继续前进的理由。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p class=&#34;about-license&#34;&gt;&lt;small&gt;本站原创文章及原创图片，除特别注明外，采用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-SA 4.0&lt;/a&gt; 协议发布。本站使用的主题、Live2D 模型、背景图片、字体及第三方代码，其版权和许可归原作者所有，并按照各自许可证使用。&lt;/small&gt;&lt;/p&gt;
-&lt;p class=&#34;about-contact&#34;&gt;QQ：3089730669&lt;br&gt;Email：styxsora@gmail.com&lt;br&gt;Github：&lt;a href=&#34;https://github.com/sorastyx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/sorastyx&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>搜索</title>
-        <link>https://sorastyx.github.io/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://sorastyx.github.io/search/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>友情链接</title>
-        <link>https://sorastyx.github.io/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://sorastyx.github.io/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
 </description>
         </item>
         
